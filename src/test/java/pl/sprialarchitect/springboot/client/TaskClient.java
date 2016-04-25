@@ -16,7 +16,7 @@ public class TaskClient {
 		AsyncRestTemplate template = new AsyncRestTemplate();
 		TaskRequest requestBody = new TaskRequest();
 		requestBody.setTaskName("Task no. 7");
-		requestBody.setTaskParameters(new String[]{"Eleven"}); // have en dejlig dag !
+		requestBody.setTaskParameters(new String[]{"Eleven"}); // hav en dejlig dag !
 		HttpEntity<TaskRequest> requestEntity = new HttpEntity<TaskRequest>(requestBody);
 		ListenableFuture<ResponseEntity<String>> lFutureResponse = template.postForEntity("http://localhost:8080/spb/task", requestEntity, String.class);
 		lFutureResponse.addCallback(new ListenableFutureCallback<ResponseEntity<String>>() {
